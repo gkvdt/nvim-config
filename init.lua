@@ -1,3 +1,2 @@
-require('config')
-require('lazy')
-require('plugins')
+require("gkvdt.core")
+require("gkvdt.lazy")

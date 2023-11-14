@@ -31,13 +31,13 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
-keymap.set("n", "<leader>/", "gcc", { desc = "Toggle Comment Line" })
-keymap.set("v", "<leader>/", "gcc", { desc = "Toggle Comment Selected" })
+-- toggle comment line
+vim.api.nvim_set_keymap("n", "<leader>/", "gcc", { desc = "Toggle Comment Line" })
+vim.api.nvim_set_keymap("v", "<leader>/", "gc", { desc = "Toggle Comment Line" })
 
+vim.api.nvim_set_keymap("n", "<leader>j", "yyp", { desc = "Duplicate Line" })
 
 -- formatting
-
-    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-      require('conform').format()
-    end, { desc = "Format file or range (in visual mode)" })
-
+vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+  require("conform").format()
+end, { desc = "Format file or range (in visual mode)" })
